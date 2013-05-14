@@ -38,19 +38,6 @@ int SM5100B::send(char* command)
   return bytes + 1;
 }
 
-//
-// Initial response data...
-//
-// +SIND: 1
-//
-// +SIND: 10,"SM",1,"FD",1,"LD",1,"MC",1,"RC",1,"ME",1
-//
-// +SIND: 11
-//
-// +SIND: 3
-//
-// +SIND: 4
-
 char* SM5100B::flushInput()
 {
   char* input = head;
@@ -71,6 +58,19 @@ char* SM5100B::processInput()
 
   return flushInput();
 }
+
+//
+// Initial response data...
+//
+// +SIND: 1
+//
+// +SIND: 10,"SM",1,"FD",1,"LD",1,"MC",1,"RC",1,"ME",1
+//
+// +SIND: 11
+//
+// +SIND: 3
+//
+// +SIND: 4
 
 void SM5100B::processSIND()
 {
